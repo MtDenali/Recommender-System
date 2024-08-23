@@ -30,6 +30,10 @@ Models that use type A data are referred to as **collaborative filtering methods
 **Collaborative filtering models** use the collaborative power of established user-item interactions to make recommendations about new user-item interactions. In this project we use a ratings database where the user is an audience member who viewed a movie, and the item is the movie being rated.
 The main challenge in designing collaborative filtering methods is that the underlying ratings matrices are **sparse**. Consider this example of a movie application in which users specify ratings indicating their like or dislike of specific movies. Most users would have viewed only a small fraction of the large universe of available movies and as a result most of the ratings are unspecified.
 
+In this project, we implement and analyze the performance of two types of collaborative filtering methods:
+**1. Neighborhood-based collaborative filtering:** Directly leverages the choices of other users to determine potential items to recommend to the current user.
+**2. Model-based collaborative filtering:** Estimates a joint model from all user data, enabling the generation of new recommendations without accessing the entire user base, and allowing for queries on a more compact model.
+
 The basic idea in neighborhood-based methods is to use either **user-user** similarity or **item-item** similarity to make predictions from a ratings matrix. There are two basic principles used in neighborhood-based models: user-based or item-based. In this project, we will only implement user-based collaborative filtering.
 
  **User-based models**: Similar users have similar ratings on the same item. Therefore, if John and Molly have rated movies in a similar way in the past, then one can use John’s observed ratings on the movie Terminator to predict Molly’s rating on this movie. Item is kept constant.
